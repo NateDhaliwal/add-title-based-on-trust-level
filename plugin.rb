@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-# name: discourse-plugin-name
+# name: add_title_based_on_trust_level
 # about: TODO
 # meta_topic_id: TODO
 # version: 0.0.1
-# authors: Discourse
+# authors: nateDhaliwal
 # url: TODO
 # required_version: 2.7.0
 
@@ -14,7 +14,7 @@ module ::AddTitleBasedOnTrustLevel
   PLUGIN_NAME = "add-title-based-on-user-trust-level"
 end
 
-require_relative "lib/add_title_based_on_trust_level/engine"
+# require_relative "lib/add_title_based_on_trust_level/engine"
 
 after_initialize do
   on(:user_created) do |newuserdata|
