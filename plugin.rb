@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# name: add_title_based_on_trust_level
+# name: add-title-based-on-trust-level
 # about: TODO
 # meta_topic_id: TODO
 # version: 0.0.1
