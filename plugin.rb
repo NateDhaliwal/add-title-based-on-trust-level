@@ -11,7 +11,7 @@
 enabled_site_setting :add_title_based_on_trust_level_enabled
 
 module ::AddTitleBasedOnTrustLevel
-  PLUGIN_NAME = "add-title-based-on-user-trust-level"
+  PLUGIN_NAME = "add-title-based-on-trust-level"
 end
 
 # require_relative "lib/add_title_based_on_trust_level/engine"
