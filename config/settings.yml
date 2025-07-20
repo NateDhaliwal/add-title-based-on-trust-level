@@ -1,4 +1,19 @@
-TODO_plugin_name:
-  plugin_name_enabled:
+add_title_based_on_trust_level:
+  add_title_based_on_trust_level_enabled:
     default: false
     client: true
+  tl0_title_on_create:
+    default: ""
+    type: string
+  tl1_title_on_promotion:
+    default: ""
+    type: string
+  tl2_title_on_promotion:
+    default: ""
+    type: string
+  tl3_title_on_promotion:
+    default: ""
+    type: string
+  tl4_title_on_promotion:
+    default: ""
+    type: string
