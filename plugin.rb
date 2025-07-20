@@ -36,13 +36,13 @@ after_initialize do
     if user.trust_level == 1 then
       user.title = tl1_title
       user.save!
-    else if user.trust_level == 2 then
+    elsif user.trust_level == 2 then
       user.title = t12_title
       user.save!
-    else if user.trust_level == 3 then
+    elsif user.trust_level == 3 then
       user.title = t13_title
       user.save!
-    else if user.trust_level == 4 then
+    elsif user.trust_level == 4 then
       user.title = t14_title
       user.save!
     end
