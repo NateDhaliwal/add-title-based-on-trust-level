@@ -1,4 +1,4 @@
-add_title_based_on_trust_level:
+plugins:
   add_title_based_on_trust_level_enabled:
     default: false
     client: true
