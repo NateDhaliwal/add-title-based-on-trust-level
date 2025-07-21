@@ -18,6 +18,7 @@ end
 
 after_initialize do
   on(:user_created) do |newuserdata|
+    puts newuserdata
     newuserid = newuserdata.id
     newuser = User.find_by(id: newuserid)
     tl0_title = SiteSettings.tl0_title_on_create
@@ -26,6 +27,7 @@ after_initialize do
   end
   
   on(:user_promoted) do |userdata|
+    puts userdata
     userid = userdata.id
     user = User.find_by(id: userid)
     tl1_title = SiteSettings.tl1_title_on_promotion
