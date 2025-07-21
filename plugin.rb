@@ -33,7 +33,7 @@ after_initialize do
     tl2_title = SiteSetting.tl2_title_on_promotion
     tl3_title = SiteSetting.tl3_title_on_promotion
     tl4_title = SiteSetting.tl4_title_on_promotion
-
+    puts user.trust_level
     if user.trust_level == 0 then
       user.title = tl0_title
       user.save!
