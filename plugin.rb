@@ -14,7 +14,7 @@ module ::AddTitleBasedOnTrustLevel
   PLUGIN_NAME = "add-title-based-on-trust-level"
 end
 
-require_relative "lib/add_title_based_on_trust_level/engine"
+#require_relative "lib/add_title_based_on_trust_level/engine"
 
 after_initialize do
   on(:user_created) do |newuserdata|
