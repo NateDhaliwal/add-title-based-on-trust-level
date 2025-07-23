@@ -10,17 +10,15 @@
 
 enabled_site_setting :add_title_based_on_trust_level_enabled
 
-
-tl0_title = SiteSetting.tl0_title_on_create
-tl0_title = SiteSetting.tl0_title_on_create
-tl1_title = SiteSetting.tl1_title_on_promotion
-tl2_title = SiteSetting.tl2_title_on_promotion
-tl3_title = SiteSetting.tl3_title_on_promotion
-tl4_title = SiteSetting.tl4_title_on_promotion
-
 module ::AddTitleBasedOnTrustLevel
   PLUGIN_NAME = "add-title-based-on-trust-level"
   def self.update_all_titles
+    tl0_title = SiteSetting.tl0_title_on_create
+    tl0_title = SiteSetting.tl0_title_on_create
+    tl1_title = SiteSetting.tl1_title_on_promotion
+    tl2_title = SiteSetting.tl2_title_on_promotion
+    tl3_title = SiteSetting.tl3_title_on_promotion
+    tl4_title = SiteSetting.tl4_title_on_promotion
     User.where(trust_level: 0).update_all(title: tl0_title)
     User.where(trust_level: 1).update_all(title: tl1_title)
     User.where(trust_level: 2).update_all(title: tl2_title)
@@ -34,6 +32,13 @@ end
 
 
 after_initialize do
+  tl0_title = SiteSetting.tl0_title_on_create
+  tl0_title = SiteSetting.tl0_title_on_create
+  tl1_title = SiteSetting.tl1_title_on_promotion
+  tl2_title = SiteSetting.tl2_title_on_promotion
+  tl3_title = SiteSetting.tl3_title_on_promotion
+  tl4_title = SiteSetting.tl4_title_on_promotion
+  
   ::AddTitleBasedOnTrustLevel.update_all_titles
   
   on(:user_created) do |newuserdata|
