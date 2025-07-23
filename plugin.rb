@@ -20,7 +20,6 @@ end
 
 after_initialize do
   tl0_title = SiteSetting.tl0_title_on_create
-  tl0_title = SiteSetting.tl0_title_on_create
   tl1_title = SiteSetting.tl1_title_on_promotion
   tl2_title = SiteSetting.tl2_title_on_promotion
   tl3_title = SiteSetting.tl3_title_on_promotion
