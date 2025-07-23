@@ -17,15 +17,26 @@ end
 #require_relative "lib/add_title_based_on_trust_level/engine"
 
 after_initialize do
+  tl0_title = SiteSetting.tl0_title_on_create
+  tl0_title = SiteSetting.tl0_title_on_create
+  tl1_title = SiteSetting.tl1_title_on_promotion
+  tl2_title = SiteSetting.tl2_title_on_promotion
+  tl3_title = SiteSetting.tl3_title_on_promotion
+  tl4_title = SiteSetting.tl4_title_on_promotion
+  def update_all_titles
+    User.where(trust_level: 0).update_all(title: tl0_title)
+    User.where(trust_level: 1).update_all(title: tl1_title)
+    User.where(trust_level: 2).update_all(title: tl2_title)
+    User.where(trust_level: 3).update_all(title: tl3_title)
+    User.where(trust_level: 4).update_all(title: tl4_title)
+  end
+
+  update_all_titles
+  
   on(:user_created) do |newuserdata|
     newuserid = newuserdata[:user_id]
     newuser = User.find_by(id: newuserid)
-    tl0_title = SiteSetting.tl0_title_on_create
-    tl0_title = SiteSetting.tl0_title_on_create
-    tl1_title = SiteSetting.tl1_title_on_promotion
-    tl2_title = SiteSetting.tl2_title_on_promotion
-    tl3_title = SiteSetting.tl3_title_on_promotion
-    tl4_title = SiteSetting.tl4_title_on_promotion
+    
     if newuser.trust_level == 0 then
       newuser.title = tl0_title
       newuser.save!
