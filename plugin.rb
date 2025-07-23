@@ -21,8 +21,27 @@ after_initialize do
     newuserid = newuserdata[:user_id]
     newuser = User.find_by(id: newuserid)
     tl0_title = SiteSetting.tl0_title_on_create
-    newuser.title = tl0_title
-    newuser.save!
+    tl0_title = SiteSetting.tl0_title_on_create
+    tl1_title = SiteSetting.tl1_title_on_promotion
+    tl2_title = SiteSetting.tl2_title_on_promotion
+    tl3_title = SiteSetting.tl3_title_on_promotion
+    tl4_title = SiteSetting.tl4_title_on_promotion
+    if newuser.trust_level == 0 then
+      newuser.title = tl0_title
+      newuser.save!
+    elsif newuser.trust_level == 1 then
+      newuser.title = tl1_title
+      newuser.save!
+    elsif newuser.trust_level == 2 then
+      newuser.title = tl2_title
+      newuser.save!
+    elsif newuser.trust_level == 3 then
+      newuser.title = tl3_title
+      newuser.save!
+    elsif newuser.trust_level == 4 then
+      newuser.title = tl4_title
+      newuser.save!
+    end
   end
   
   on(:user_promoted) do |userdata|
@@ -33,7 +52,6 @@ after_initialize do
     tl2_title = SiteSetting.tl2_title_on_promotion
     tl3_title = SiteSetting.tl3_title_on_promotion
     tl4_title = SiteSetting.tl4_title_on_promotion
-    puts user.trust_level
     if user.trust_level == 0 then
       user.title = tl0_title
       user.save!
