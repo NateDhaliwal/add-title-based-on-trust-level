@@ -24,11 +24,11 @@ after_initialize do
   tl2_title = SiteSetting.tl2_title_on_promotion
   tl3_title = SiteSetting.tl3_title_on_promotion
   tl4_title = SiteSetting.tl4_title_on_promotion
-  User.where(trust_level: 0).update_all(title: tl0_title)
-  User.where(trust_level: 1).update_all(title: tl1_title)
-  User.where(trust_level: 2).update_all(title: tl2_title)
-  User.where(trust_level: 3).update_all(title: tl3_title)
-  User.where(trust_level: 4).update_all(title: tl4_title)
+  # User.where(trust_level: 0).update_all(title: tl0_title)
+  # User.where(trust_level: 1).update_all(title: tl1_title)
+  # User.where(trust_level: 2).update_all(title: tl2_title)
+  # User.where(trust_level: 3).update_all(title: tl3_title)
+  # User.where(trust_level: 4).update_all(title: tl4_title)
   
   on(:user_created) do |newuserdata|
     newuserid = newuserdata[:user_id]
