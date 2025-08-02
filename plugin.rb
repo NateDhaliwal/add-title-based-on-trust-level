@@ -3,7 +3,7 @@
 # name: add-title-based-on-trust-level
 # about: TODO
 # meta_topic_id: TODO
-# version: 0.0.1
+# version: 1.1.0
 # authors: nateDhaliwal
 # url: TODO
 # required_version: 2.7.0
