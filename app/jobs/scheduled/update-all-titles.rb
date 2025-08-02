@@ -12,4 +12,5 @@ module AddTitleBasedOnTrustLevel
       User.where(trust_level: 2).update_all(title: tl2_title)
       User.where(trust_level: 3).update_all(title: tl3_title)
     end
+  end
 end
