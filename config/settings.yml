@@ -17,3 +17,6 @@ plugins:
   tl4_title_on_promotion:
     default: ""
     type: string
+  update_title_frequency:
+    default: 24
+    type: integer
