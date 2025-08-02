@@ -2,7 +2,7 @@
 
 module AddTitleBasedOnTrustLevel
   class UpdateTitles < ::Jobs::Scheduled
-    every 12.hours # Run twice a day
+    every SiteSetting.update_title_frequency.hours # Run based on site setting
 
     def execute(args)
       tl0_title = SiteSetting.tl0_title_on_create
