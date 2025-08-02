@@ -5,7 +5,7 @@
 # meta_topic_id: TODO
 # version: 1.1.0
 # authors: NateDhaliwal
-# url: TODO
+# url: https://github.com/NateDhaliwal/add-title-based-on-trust-level
 # required_version: 2.7.0
 
 enabled_site_setting :add_title_based_on_trust_level_enabled
