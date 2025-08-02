@@ -4,7 +4,7 @@
 # about: TODO
 # meta_topic_id: TODO
 # version: 1.1.0
-# authors: nateDhaliwal
+# authors: NateDhaliwal
 # url: TODO
 # required_version: 2.7.0
 
