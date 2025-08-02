@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AddTitleBasedOnTrustLevel
   class UpdateTitles < ::Jobs::Scheduled
     every 12.hours # Run twice a day
