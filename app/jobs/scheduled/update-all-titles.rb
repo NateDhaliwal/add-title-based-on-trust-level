@@ -1,5 +1,5 @@
-module FindTopicsToReset
-  class FindTopics < ::Jobs::Scheduled
+module AddTitleBasedOnTrustLevel
+  class UpdateTitles < ::Jobs::Scheduled
     every 12.hours # Run twice a day
 
     def execute(args)
