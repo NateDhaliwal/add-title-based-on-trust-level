@@ -20,7 +20,7 @@ end
 
 after_initialize do
   %w[
-    ../app/jobs/scheduled/update_all_trust_levels.rb
+    ../app/jobs/scheduled/update-all-titles.rb
   ].each { |path| require File.expand_path(path, __FILE__) }
   
   # tl0_title = SiteSetting.tl0_title_on_create
