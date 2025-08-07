@@ -5,5 +5,5 @@ en:
     tl2_title_on_promotion: "The title to add to users who have been promoted to Trust Level 2 (Member)"
     tl3_title_on_promotion: "The title to add to users who have been promoted to Trust Level 3 (Regular)"
     tl4_title_on_promotion: "The title to add to users who have been promoted to Trust Level 4 (Leader)"
-    add_primary_group_title: "Add the primary group to the user's title. The title after the group name is the one specified in the settings above"
+    add_primary_group_title: "Add the primary group to the user's title. The title after the group name is the one specified in the settings above. If checked, you can use the placeholder `{group_name}` in the title"
     update_title_frequency: "How often the titles should be checked and updated, in hours"
