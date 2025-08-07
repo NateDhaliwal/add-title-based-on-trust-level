@@ -14,6 +14,7 @@ module AddTitleBasedOnTrustLevel
       trust_levels = [0, 1, 2, 3, 4]
       if SiteSetting.add_primary_group_title
         trust_levels.each do |tl|
+          User.where(trust_level: 0).update_all("users.title = groups.full_name", "users.primary_group_id = groups.id")
           if tl == 0
             DB.exec(<<~SQL, tl0_title, tl)
               UPDATE users
