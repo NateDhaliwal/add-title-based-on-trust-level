@@ -15,7 +15,7 @@ module AddTitleBasedOnTrustLevel
       if SiteSetting.add_primary_group_title
         trust_levels.each do |tl|
           if tl == 0
-            DB.exec(<<~SQL, tl, tl0_title)
+            DB.exec(<<~SQL, tl0_title, tl)
               UPDATE users
               SET title = REPLACE(?, '{group_name}', groups.name)
               FROM groups
@@ -24,7 +24,7 @@ module AddTitleBasedOnTrustLevel
                 AND users.primary_group_id IS NOT NULL;
             SQL
           elsif tl == 1
-            DB.exec(<<~SQL, tl, tl1_title)
+            DB.exec(<<~SQL, tl1_title, tl)
               UPDATE users
               SET title = REPLACE(?, '{group_name}', groups.name)
               FROM groups
@@ -33,7 +33,7 @@ module AddTitleBasedOnTrustLevel
                 AND users.primary_group_id IS NOT NULL;
             SQL
           elsif tl == 2
-            DB.exec(<<~SQL, tl, tl2_title)
+            DB.exec(<<~SQL, tl2_title, tl)
               UPDATE users
               SET title = REPLACE(?, '{group_name}', groups.name)
               FROM groups
@@ -42,7 +42,7 @@ module AddTitleBasedOnTrustLevel
                 AND users.primary_group_id IS NOT NULL;
             SQL
           elsif tl == 3
-            DB.exec(<<~SQL, tl, tl3_title)
+            DB.exec(<<~SQL, tl3_title, tl)
               UPDATE users
               SET title = REPLACE(?, '{group_name}', groups.name)
               FROM groups
@@ -51,7 +51,7 @@ module AddTitleBasedOnTrustLevel
                 AND users.primary_group_id IS NOT NULL;
             SQL
           elsif tl == 4
-            DB.exec(<<~SQL, tl, tl4_title)
+            DB.exec(<<~SQL, tl4_title, tl)
               UPDATE users
               SET title = REPLACE(?, '{group_name}', groups.name)
               FROM groups
