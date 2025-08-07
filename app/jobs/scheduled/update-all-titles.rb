@@ -61,20 +61,19 @@ module AddTitleBasedOnTrustLevel
                 AND users.primary_group_id IS NOT NULL;
             SQL
           end
-
+        end
           # Append the TL text
           # User.where(trust_level: 0).update_all("title = title || ' #{tl0_title}'") if tl0_title != ""
           # User.where(trust_level: 1).update_all("title = title || ' #{tl1_title}'") if tl1_title != ""
           # User.where(trust_level: 2).update_all("title = title || ' #{tl2_title}'") if tl2_title != ""
           # User.where(trust_level: 3).update_all("title = title || ' #{tl3_title}'") if tl3_title != ""
           # User.where(trust_level: 4).update_all("title = title || ' #{tl4_title}'") if tl4_title != ""
-        else
-          User.where(trust_level: 0).update_all(title: tl0_title) if tl0_title != ""
-          User.where(trust_level: 1).update_all(title: tl1_title) if tl1_title != ""
-          User.where(trust_level: 2).update_all(title: tl2_title) if tl2_title != ""
-          User.where(trust_level: 3).update_all(title: tl3_title) if tl3_title != ""
-          User.where(trust_level: 4).update_all(title: tl4_title) if tl4_title != ""
-        end
+      else
+        User.where(trust_level: 0).update_all(title: tl0_title) if tl0_title != ""
+        User.where(trust_level: 1).update_all(title: tl1_title) if tl1_title != ""
+        User.where(trust_level: 2).update_all(title: tl2_title) if tl2_title != ""
+        User.where(trust_level: 3).update_all(title: tl3_title) if tl3_title != ""
+        User.where(trust_level: 4).update_all(title: tl4_title) if tl4_title != ""
       end
     end
   end
